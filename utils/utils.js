@@ -2,9 +2,9 @@ const path = require('path');
 const cv = require('opencv4nodejs');
 // const camWidth = 320;
 // const camHeight = 240;
-// const camFps = 10;
-// const camInterval = 1000 / camFps;
-const camInterval = 0;
+const camFps = 10;
+const camInterval = 1000 / camFps;
+// const camInterval = 0;
 
 const dataPath = path.resolve(__dirname, '../data');
 

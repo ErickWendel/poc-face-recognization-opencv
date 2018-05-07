@@ -2,7 +2,8 @@ const cv = require('opencv4nodejs');
 
 const {
     grabFrames,
-    drawBlueRect
+    drawBlueRect,
+    drawGreenRect,
 } = require('./utils');
 
 const { extractResults } = require('./ssdUtils');
@@ -16,8 +17,9 @@ function runVideoFaceDetection(src, detectFaces) {
         const faceRects = detectFaces(frameResized);
 
         if (faceRects.length) {
+            console.log(`face detectada`)
             // draw detection
-            faceRects.forEach(faceRect => drawBlueRect(frameResized, faceRect));
+            faceRects.forEach(faceRect => drawGreenRect(frameResized, faceRect));
         }
 
         cv.imshow('face detection', frameResized);
