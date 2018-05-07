@@ -1,5 +1,4 @@
 const path = require('path');
-
 const cv = require('opencv4nodejs');
 // const camWidth = 320;
 // const camHeight = 240;

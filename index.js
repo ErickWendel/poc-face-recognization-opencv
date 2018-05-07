@@ -1,5 +1,4 @@
-var cv = require('opencv4nodejs');
-
+const cv = require('opencv4nodejs');
 
 const { runVideoFaceDetection } = require('./utils/commons');
 
