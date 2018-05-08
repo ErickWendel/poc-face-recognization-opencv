@@ -9,17 +9,17 @@ const delay = 1;
 
 runVideoFaceDetection(webcamPort, delay);
 
-let done = false;
-(async () => {
-  setInterval(async () => {
-    if (done) {
-      publisher.restartRecord();
-      done = false;
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      // return;
-    }
-    publisher.stopRecord();
+// let done = false;
+// (async () => {
+//   setInterval(async () => {
+//     if (done) {
+//       publisher.restartRecord();
+//       done = false;
+//       await new Promise(resolve => setTimeout(resolve, 2000));
+//       // return;
+//     }
+//     publisher.stopRecord();
 
-    done = true;
-  }, 1000);
-})();
+//     done = true;
+//   }, 1000);
+// })();
