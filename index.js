@@ -1,19 +1,25 @@
-const cv = require('opencv4nodejs');
-
-const { runVideoFaceDetection } = require('./utils/commons');
-
-const classifier = new cv.CascadeClassifier(cv.HAAR_FRONTALFACE_ALT2);
+const cv = require("opencv4nodejs");
+const {
+  events: { publisher },
+} = require("./utils/videoEmitter");
+const runVideoFaceDetection = require("./utils/grabFrames");
 
 const webcamPort = 0;
+const delay = 1;
 
-function detectFaces(img) {
-    // restrict minSize and scaleFactor for faster processing
-    const options = {
-        minSize: new cv.Size(100, 100),
-        scaleFactor: 1.2,
-        minNeighbors: 10
-    };
-    return classifier.detectMultiScale(img.bgrToGray(), options).objects;
-}
+runVideoFaceDetection(webcamPort, delay);
 
-runVideoFaceDetection(webcamPort, detectFaces);
+// let done = false;
+// (async () => {
+//   setInterval(async () => {
+//     if (done) {
+//       publisher.restartRecord();
+//       done = false;
+//       await new Promise(resolve => setTimeout(resolve, 2000));
+//       // return;
+//     }
+//     publisher.stopRecord();
+
+//     done = true;
+//   }, 1000);
+// })();
