@@ -63,12 +63,12 @@ function runVideoFaceDetection(videoFile, delay) {
 }
 
 //// events
-subscriber.restartRecord(() => {
+subscriber.onRestartRecord(() => {
   runVideoFaceDetection(dependencies.videoFile, dependencies.delay);
   console.log("restarting record");
 });
 
-subscriber.stopRecord(() => {
+subscriber.onStopRecord(() => {
   clearInterval(dependencies.interval);
   console.log("stopping record");
 });

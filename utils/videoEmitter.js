@@ -28,8 +28,8 @@ module.exports = {
       restartRecord: pubRestartRecord,
     },
     subscriber: {
-      stopRecord: subStopRecord,
-      restartRecord: subRestartRecord,
+      onStopRecord: subStopRecord,
+      onRestartRecord: subRestartRecord,
     },
   },
 };
